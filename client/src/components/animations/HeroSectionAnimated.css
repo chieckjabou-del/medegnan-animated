@@ -1,0 +1,333 @@
+/**
+ * HeroSectionAnimated.css
+ * Animations CSS pour le Hero section
+ * Basé sur les skills : CSS/HyperFrames + UI-Animation
+ * Timing : 200-300ms pour les transitions fluides
+ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a3a52 0%, #0d1f2d 100%);
+  background-attachment: fixed;
+}
+
+/* Parallax overlay */
+.hero-parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background: radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Main content container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 40px 20px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+/* Hero title with glow animation */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  
+  /* Glow effect */
+  text-shadow: 
+    0 0 20px rgba(76, 175, 80, 0.5),
+    0 0 40px rgba(76, 175, 80, 0.3);
+  
+  animation: glowPulse 3s ease-in-out infinite, fadeInDown 1s ease-out;
+  letter-spacing: -1px;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 
+      0 0 20px rgba(76, 175, 80, 0.5),
+      0 0 40px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    text-shadow: 
+      0 0 30px rgba(76, 175, 80, 0.8),
+      0 0 60px rgba(76, 175, 80, 0.5);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #b0bec5;
+  margin: 0 0 40px 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  animation: fadeInUp 1s ease-out 0.3s both;
+  transition: transform 0.1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA Button base styles */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+  padding: 14px 32px;
+  margin: 0 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+/* Primary CTA button */
+.cta-button-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.cta-button-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(76, 175, 80, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.cta-button-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Secondary CTA button */
+.cta-button-secondary {
+  background: transparent;
+  color: #4CAF50;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 0 0 rgba(76, 175, 80, 0);
+}
+
+.cta-button-secondary:hover {
+  background: rgba(76, 175, 80, 0.1);
+  box-shadow: 0 0 20px rgba(76, 175, 80, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Pulse animation for primary button */
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.5);
+  }
+  50% {
+    box-shadow: 0 8px 45px rgba(76, 175, 80, 0.7);
+  }
+}
+
+/* Button text */
+.button-text {
+  position: relative;
+  z-index: 2;
+}
+
+/* Button icon */
+.button-icon {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.cta-button:hover .button-icon {
+  transform: translateX(4px);
+}
+
+/* Ripple effect on click */
+.button-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.cta-button:active .button-ripple {
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
+
+/* Animated background elements */
+.hero-animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.floating-element {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 20s infinite ease-in-out;
+}
+
+.element-1 {
+  width: 300px;
+  height: 300px;
+  background: #4CAF50;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.element-2 {
+  width: 200px;
+  height: 200px;
+  background: #2E7D32;
+  bottom: 20%;
+  right: 15%;
+  animation-delay: 5s;
+}
+
+.element-3 {
+  width: 150px;
+  height: 150px;
+  background: #4CAF50;
+  top: 50%;
+  right: 10%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    margin: 8px 5px;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .floating-element {
+    opacity: 0.05;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-title,
+    .hero-subtitle,
+    .cta-button,
+    .floating-element {
+      animation: none;
+    }
+
+    .cta-button:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .hero-section {
+    background: linear-gradient(135deg, #0d1f2d 0%, #051219 100%);
+  }
+
+  .hero-title {
+    color: #ffffff;
+  }
+
+  .hero-subtitle {
+    color: #90a4ae;
+  }
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

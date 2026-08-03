@@ -1,0 +1,397 @@
+/**
+ * AnimatedTimeline.css
+ * Styles pour la timeline animée du processus
+ * Basé sur les skills : CSS/HyperFrames + UI-Animation
+ */
+
+.animated-timeline {
+  position: relative;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Horizontal timeline */
+.timeline-horizontal {
+  .timeline-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+  }
+
+  .step-connector {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4CAF50 0%, #4CAF50 var(--progress, 0%), #e0e0e0 var(--progress, 0%), #e0e0e0 100%);
+    z-index: 0;
+  }
+}
+
+/* Vertical timeline */
+.timeline-vertical {
+  .timeline-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+  }
+
+  .step-connector {
+    position: absolute;
+    left: 40px;
+    top: 80px;
+    bottom: -40px;
+    width: 2px;
+    background: linear-gradient(180deg, #4CAF50 0%, #4CAF50 var(--progress, 0%), #e0e0e0 var(--progress, 0%), #e0e0e0 100%);
+    z-index: 0;
+  }
+}
+
+/* Progress bar container */
+.timeline-progress-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.timeline-progress-bar {
+  position: absolute;
+  background: linear-gradient(90deg, #4CAF50 0%, #2E7D32 100%);
+  height: 3px;
+  top: 40px;
+  left: 0;
+  transition: width 100ms ease-out;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* Timeline steps container */
+.timeline-steps {
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual timeline step */
+.timeline-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  opacity: 0.6;
+  transition: all 300ms ease;
+  animation: stepFadeIn 600ms ease-out both;
+}
+
+@keyframes stepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-step.active {
+  opacity: 1;
+}
+
+.timeline-step.current {
+  opacity: 1;
+}
+
+/* Step circle */
+.step-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.timeline-step.active .step-circle {
+  border-color: #4CAF50;
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+  transform: scale(1.1);
+}
+
+.timeline-step.current .step-circle {
+  animation: circlePulse 2s ease-in-out infinite;
+}
+
+@keyframes circlePulse {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(76, 175, 80, 0.5);
+  }
+}
+
+/* Step number */
+.step-number {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1a3a52;
+  transition: color 250ms ease;
+}
+
+.timeline-step.active .step-number {
+  color: #ffffff;
+}
+
+/* Step icon */
+.step-icon {
+  font-size: 2rem;
+  transition: transform 250ms ease;
+}
+
+.timeline-step.active .step-icon {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+/* Step content */
+.step-content {
+  flex: 1;
+  padding-top: 8px;
+  transition: all 250ms ease;
+}
+
+.step-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a3a52;
+  margin: 0 0 8px 0;
+  transition: color 250ms ease;
+}
+
+.timeline-step.active .step-title {
+  color: #4CAF50;
+}
+
+.step-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+  transition: color 250ms ease;
+  max-width: 300px;
+}
+
+.timeline-step.active .step-description {
+  color: #333;
+}
+
+/* Step connector line */
+.step-connector {
+  position: absolute;
+  z-index: 1;
+  transition: background 300ms ease;
+}
+
+.timeline-step.active .step-connector {
+  background: #4CAF50;
+}
+
+/* Decorative elements */
+.timeline-decoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decoration-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(76, 175, 80, 0.1);
+  animation: float 20s infinite ease-in-out;
+}
+
+.decoration-dot-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.decoration-dot-2 {
+  width: 150px;
+  height: 150px;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 5s;
+}
+
+.decoration-dot-3 {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  right: 5%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-40px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .timeline-horizontal .timeline-steps {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .timeline-step {
+    flex-basis: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .animated-timeline {
+    padding: 40px 16px;
+  }
+
+  /* Force vertical layout on mobile */
+  .timeline-horizontal {
+    .timeline-steps {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .step-connector {
+      position: absolute !important;
+      left: 40px !important;
+      top: 80px !important;
+      bottom: -40px !important;
+      width: 2px !important;
+      height: auto !important;
+      background: linear-gradient(180deg, #4CAF50 0%, #4CAF50 var(--progress, 0%), #e0e0e0 var(--progress, 0%), #e0e0e0 100%) !important;
+    }
+  }
+
+  .timeline-step {
+    flex-basis: 100%;
+    gap: 16px;
+  }
+
+  .step-circle {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .step-number {
+    font-size: 1.2rem;
+  }
+
+  .step-icon {
+    font-size: 1.5rem;
+  }
+
+  .step-title {
+    font-size: 1rem;
+  }
+
+  .step-description {
+    font-size: 0.85rem;
+    max-width: 100%;
+  }
+
+  .decoration-dot {
+    opacity: 0.05;
+  }
+
+  /* Reduce animation on mobile */
+  @media (prefers-reduced-motion: reduce) {
+    .timeline-step,
+    .step-circle,
+    .decoration-dot {
+      animation: none;
+      transition: none;
+    }
+
+    .timeline-step.current .step-circle {
+      animation: none;
+    }
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .step-circle {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+
+  .step-number {
+    color: #4CAF50;
+  }
+
+  .step-title {
+    color: #ffffff;
+  }
+
+  .step-description {
+    color: #a0a0a0;
+  }
+
+  .timeline-step.active .step-description {
+    color: #e0e0e0;
+  }
+}
+
+/* Print styles */
+@media print {
+  .animated-timeline {
+    padding: 20px 0;
+  }
+
+  .timeline-step {
+    opacity: 1;
+    page-break-inside: avoid;
+  }
+
+  .step-circle {
+    box-shadow: none;
+    border: 2px solid #333;
+  }
+
+  .decoration-dot {
+    display: none;
+  }
+}

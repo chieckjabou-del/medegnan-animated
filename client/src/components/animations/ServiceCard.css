@@ -1,0 +1,369 @@
+/**
+ * ServiceCard.css
+ * Styles pour les cartes de services avec animations hover
+ * Basé sur les skills : UI-Animation + UI_Design_System
+ * Timing : 200-300ms pour les transitions fluides
+ */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Service card base */
+.service-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  
+  animation: cardFadeIn 600ms ease-out both;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card background gradient (animated on hover) */
+.card-bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0) 0%, rgba(76, 175, 80, 0) 100%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card:hover .card-bg-gradient {
+  opacity: 0.05;
+}
+
+/* Card icon */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+  animation: iconFloat 3s ease-in-out infinite;
+  transition: transform 250ms ease;
+}
+
+.service-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a3a52;
+  margin: 0 0 12px 0;
+  transition: all 250ms ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .card-title {
+  color: #4CAF50;
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+/* Card description */
+.card-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card price */
+.card-price {
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  padding: 16px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  border: 1px solid rgba(76, 175, 80, 0.1);
+  transition: all 250ms ease;
+  position: relative;
+  z-index: 1;
+}
+
+.service-card:hover .card-price {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  border-color: #4CAF50;
+}
+
+.price-value {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #1a3a52;
+  transition: color 250ms ease;
+}
+
+.service-card:hover .price-value {
+  color: #ffffff;
+}
+
+/* Card features list */
+.card-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  flex-grow: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #555;
+  transition: all 200ms ease;
+}
+
+.feature-item:last-child {
+  margin-bottom: 0;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  background: rgba(76, 175, 80, 0.1);
+  color: #4CAF50;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 0.8rem;
+  transition: all 200ms ease;
+}
+
+.service-card:hover .feature-icon {
+  background: #4CAF50;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.feature-text {
+  flex: 1;
+  transition: color 200ms ease;
+}
+
+.service-card:hover .feature-text {
+  color: #1a3a52;
+}
+
+/* Card CTA button */
+.card-cta {
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.card-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+}
+
+.card-cta:active {
+  transform: translateY(0);
+}
+
+.cta-text {
+  transition: transform 200ms ease;
+}
+
+.cta-arrow {
+  display: inline-block;
+  transition: transform 200ms ease;
+}
+
+.card-cta:hover .cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Hover overlay effect */
+.card-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 250ms ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.service-card:hover .card-hover-overlay {
+  opacity: 1;
+}
+
+/* Highlighted card (premium) */
+.service-card.highlighted {
+  border: 2px solid #4CAF50;
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(76, 175, 80, 0.2);
+}
+
+.service-card.highlighted::before {
+  content: 'POPULAIRE';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+
+.service-card.highlighted:hover {
+  transform: scale(1.08);
+  box-shadow: 0 16px 40px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 16px;
+  }
+
+  .service-card {
+    padding: 24px 16px;
+  }
+
+  .service-card.highlighted {
+    transform: scale(1);
+  }
+
+  .service-card.highlighted:hover {
+    transform: scale(1.02);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+  }
+
+  .card-cta {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .service-card {
+    background: #1a1a1a;
+    border-color: rgba(76, 175, 80, 0.2);
+  }
+
+  .card-title {
+    color: #ffffff;
+  }
+
+  .card-description {
+    color: #b0b0b0;
+  }
+
+  .card-price {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    border-color: rgba(76, 175, 80, 0.2);
+  }
+
+  .price-value {
+    color: #4CAF50;
+  }
+
+  .feature-text {
+    color: #a0a0a0;
+  }
+
+  .service-card:hover .feature-text {
+    color: #ffffff;
+  }
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .card-icon,
+  .card-title,
+  .card-price,
+  .feature-icon,
+  .card-cta,
+  .card-hover-overlay {
+    animation: none;
+    transition: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .card-icon:hover {
+    transform: none;
+  }
+}
