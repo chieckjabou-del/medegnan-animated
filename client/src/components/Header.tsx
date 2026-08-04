@@ -10,6 +10,7 @@ export default function Header() {
     { label: 'Problèmes', href: '#problems' },
     { label: 'Mission', href: '#mission' },
     { label: 'Processus', href: '#process' },
+    { label: 'Resultats', href: '#results' },
     { label: 'Tarification', href: '#pricing' },
   ];
 

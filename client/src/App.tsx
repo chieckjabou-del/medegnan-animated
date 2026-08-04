@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
+import LegalNotice from "./pages/LegalNotice";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -17,6 +18,7 @@ function Router() {
       <div style={{ paddingTop: '80px' }}>
         <Switch>
           <Route path={"\\"} component={Home} />
+          <Route path={"/mentions-legales"} component={LegalNotice} />
           <Route path={"/404"} component={NotFound} />
           {/* Final fallback route */}
           <Route component={NotFound} />

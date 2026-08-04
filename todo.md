@@ -35,10 +35,12 @@
 - [x] Tester sur mobile (iPhone, Android)
 - [x] Vérifier les animations au scroll
 - [x] Vérifier prefers-reduced-motion
-- [ ] Tester la performance (Lighthouse)
-- [ ] Vérifier l'accessibilité
+- [x] Tester la performance (Lighthouse)
+- [x] Vérifier l'accessibilité
 
 ## Phase 6 : Déploiement
 - [x] Créer un checkpoint
 - [x] Vérifier le build
+- [x] Ajouter les pages légales
+- [x] Mettre à jour les liens du footer
 - [x] Livrer le projet au client

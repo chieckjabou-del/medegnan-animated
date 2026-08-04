@@ -98,15 +98,7 @@ export default function Footer() {
               </p>
             </div>
             <div className="md:text-right space-x-4">
-              <a href="#" className="hover:text-green-500 transition-colors">
-                Politique de confidentialité
-              </a>
-              <span>•</span>
-              <a href="#" className="hover:text-green-500 transition-colors">
-                Conditions d'utilisation
-              </a>
-              <span>•</span>
-              <a href="#" className="hover:text-green-500 transition-colors">
+              <a href="/mentions-legales" className="hover:text-green-500 transition-colors">
                 Mentions légales
               </a>
             </div>
