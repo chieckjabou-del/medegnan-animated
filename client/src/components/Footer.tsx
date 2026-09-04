@@ -5,9 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-16 px-4">
+    <footer className="bg-gray-900 text-gray-300 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* About */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">MEDEGNAN</h3>
@@ -18,8 +18,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">Navigation</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-white font-bold text-lg mb-3">Navigation</h3>
+            <ul className="space-y-1.5 text-sm">
               <li>
                 <a href="#" className="hover:text-green-500 transition-colors">
                   Accueil
@@ -46,20 +46,25 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Services</h3>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-1.5 text-sm">
               <li>
                 <a href="#pricing" className="hover:text-green-500 transition-colors">
-                  Diagnostic Standard
+                  Micro-entreprise
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-green-500 transition-colors">
-                  Diagnostic Avancé
+                  Petite entreprise
                 </a>
               </li>
               <li>
                 <a href="#pricing" className="hover:text-green-500 transition-colors">
-                  Diagnostic Premium
+                  PME et groupes
+                </a>
+              </li>
+              <li>
+                <a href="#network" className="hover:text-green-500 transition-colors">
+                  Réseau de consultants
                 </a>
               </li>
             </ul>
@@ -68,7 +73,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="text-white font-bold text-lg mb-4">Contact</h3>
-            <div className="space-y-3 text-sm">
+            <div className="space-y-2 text-sm">
               <div className="flex items-center gap-2">
                 <Phone size={16} className="text-green-500" />
                 <a href="https://wa.me/22964280865" className="hover:text-green-500 transition-colors">
@@ -83,14 +88,14 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin size={16} className="text-green-500" />
-                <span>Bénin, Afrique de l'Ouest</span>
+                <span>Intervention dans 9 pays d'Afrique</span>
               </div>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 pt-8">
+        <div className="border-t border-gray-800 pt-6">
           <div className="grid md:grid-cols-2 gap-8 text-sm">
             <div>
               <p>

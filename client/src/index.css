@@ -175,3 +175,28 @@
     }
   }
 }
+
+/* Codes pays : repère visuel discret, sans emoji */
+.country-code {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  border: 1px solid #d7e6de;
+  border-radius: 999px;
+  color: #1d7a4f;
+  background: #f2faf5;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}

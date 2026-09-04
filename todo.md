@@ -44,3 +44,23 @@
 - [x] Ajouter les pages légales
 - [x] Mettre à jour les liens du footer
 - [x] Livrer le projet au client
+
+## Mise à jour finale — Cas d'Études et densité visuelle
+- [x] Récupérer les cas d'études pertinents depuis Google Drive
+- [x] Anonymiser les cas et présenter les indicateurs avant/après
+- [x] Ajouter uniquement les témoignages issus des documents disponibles
+- [x] Intégrer la section Cas d'Études dans la page d'accueil
+- [x] Réduire les espacements verticaux des sections principales
+- [x] Corriger l'écran blanc et les erreurs JSX de la page d'accueil
+- [x] Corriger l'apostrophe du nom Côte d'Ivoire
+- [x] Remplacer les repères pays par des codes professionnels sans emoji
+- [x] Mettre à jour le footer avec les offres actuelles et 9 pays d'intervention
+- [x] Ajouter l'email contactmedegnan@gmail.com aux mentions légales
+- [x] Ajouter les liens Cas d'études et Réseau dans le header
+- [x] Corriger le chevauchement du header desktop
+- [x] Ajouter et exécuter les tests Vitest client et serveur
+- [x] Vérifier la compilation TypeScript
+- [x] Vérifier le build de production
+- [x] Vérifier le rendu desktop
+- [x] Vérifier le rendu mobile
+- [ ] Créer le checkpoint final de cette version

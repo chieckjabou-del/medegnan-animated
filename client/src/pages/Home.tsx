@@ -3,6 +3,8 @@ import HeroSectionAnimated from '@/components/animations/HeroSectionAnimated';
 import { ResultsGrid } from '@/components/animations/AnimatedCounter';
 import { ServiceGrid } from '@/components/animations/ServiceCard';
 import { AnimatedTimeline } from '@/components/animations/AnimatedTimeline';
+import CaseStudies from '@/components/CaseStudies';
+import { CircleDollarSign, Clock3, Percent, Timer } from 'lucide-react';
 import '@/components/animations/HeroSectionAnimated.css';
 import '@/components/animations/AnimatedCounter.css';
 import '@/components/animations/ServiceCard.css';
@@ -43,25 +45,25 @@ export default function Home() {
       target: 4000000,
       label: 'FCFA d\'économies en moyenne',
       suffix: ' FCFA',
-      icon: '₣',
+      icon: <CircleDollarSign size={28} strokeWidth={1.7} aria-hidden="true" />,
     },
     {
       target: 150,
       label: 'Heures d\'audit incluses',
       suffix: 'h',
-      icon: '⏱',
+      icon: <Clock3 size={28} strokeWidth={1.7} aria-hidden="true" />,
     },
     {
       target: 98,
       label: 'Taux de satisfaction',
       suffix: '%',
-      icon: '★',
+      icon: <Percent size={28} strokeWidth={1.7} aria-hidden="true" />,
     },
     {
       target: 48,
       label: 'Heures pour les résultats',
       suffix: 'h',
-      icon: '▶',
+      icon: <Timer size={28} strokeWidth={1.7} aria-hidden="true" />,
     },
   ];
 
@@ -197,9 +199,9 @@ export default function Home() {
       />
 
       {/* Section : Zones d'intervention */}
-      <section id="zones" className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+      <section id="zones" className="py-12 px-4 bg-gradient-to-b from-white to-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Nos zones d'intervention
             </h2>
@@ -210,21 +212,21 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { country: 'Bénin', flag: '🇧🇯' },
-              { country: 'Burkina Faso', flag: '🇧🇫' },
-              { country: 'Côte d\'Ivoire', flag: '🇨🇮' },
-              { country: 'Guinée', flag: '🇬🇳' },
-              { country: 'Mali', flag: '🇲🇱' },
-              { country: 'Niger', flag: '🇳🇪' },
-              { country: 'Sénégal', flag: '🇸🇳' },
-              { country: 'Togo', flag: '🇹🇬' },
-              { country: 'Cameroun', flag: '🇨🇲' },
+              { country: 'Bénin', code: 'BJ' },
+              { country: 'Burkina Faso', code: 'BF' },
+              { country: "Côte d'Ivoire", code: 'CI' },
+              { country: 'Guinée', code: 'GN' },
+              { country: 'Mali', code: 'ML' },
+              { country: 'Niger', code: 'NE' },
+              { country: 'Sénégal', code: 'SN' },
+              { country: 'Togo', code: 'TG' },
+              { country: 'Cameroun', code: 'CM' },
             ].map((item, idx) => (
               <div
                 key={idx}
                 className="bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg hover:border-green-500 transition-all duration-300 text-center"
               >
-                <div className="text-4xl mb-4">{item.flag}</div>
+                <div className="country-code" aria-hidden="true">{item.code}</div>
                 <h3 className="text-lg font-bold text-gray-900">{item.country}</h3>
               </div>
             ))}
@@ -233,9 +235,9 @@ export default function Home() {
       </section>
 
       {/* Section : Problèmes et Enjeux */}
-      <section id="problems" className="py-20 px-4 bg-white">
+      <section id="problems" className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Les vrais problèmes de votre entreprise
             </h2>
@@ -274,9 +276,9 @@ export default function Home() {
       </section>
 
       {/* Section : Mission */}
-      <section id="mission" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section id="mission" className="py-12 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
-          <div className="section-header mb-12">
+          <div className="section-header mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Notre mission
             </h2>
@@ -285,7 +287,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-green-50 to-blue-50 p-12 rounded-lg border border-green-200">
+          <div className="bg-gradient-to-br from-green-50 to-blue-50 p-8 rounded-lg border border-green-200">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
                 <span className="font-bold text-green-600">MEDEGNAN CONSULTING</span> est le cabinet de référence de la transformation stratégique en Afrique francophone. Nous aidons les entrepreneurs et les dirigeants à identifier et récupérer l'argent qui s'échappe de leur entreprise.
@@ -302,9 +304,9 @@ export default function Home() {
       </section>
 
       {/* Section : Résultats */}
-      <section id="results" className="py-20 px-4 bg-white">
+      <section id="results" className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Nos résultats parlent d'eux-mêmes
             </h2>
@@ -317,9 +319,9 @@ export default function Home() {
       </section>
 
       {/* Section : Processus */}
-      <section id="process" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section id="process" className="py-12 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Notre processus simple et rassurant
             </h2>
@@ -332,9 +334,9 @@ export default function Home() {
       </section>
 
       {/* Section : Différenciation */}
-      <section id="differentiation" className="py-20 px-4 bg-white">
+      <section id="differentiation" className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Pourquoi choisir MEDEGNAN ?
             </h2>
@@ -378,9 +380,9 @@ export default function Home() {
       </section>
 
       {/* Section : Tarification */}
-      <section id="pricing" className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section id="pricing" className="py-12 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="section-header mb-16">
+          <div className="section-header mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Diagnostic Stratégique
             </h2>
@@ -393,9 +395,9 @@ export default function Home() {
       </section>
 
       {/* Section : Réseau de Consultants */}
-      <section id="network" className="py-20 px-4 bg-white">
+      <section id="network" className="py-12 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="section-header mb-12">
+          <div className="section-header mb-8">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Rejoignez notre réseau
             </h2>
@@ -404,7 +406,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-green-50 p-12 rounded-lg border border-blue-200">
+          <div className="bg-gradient-to-br from-blue-50 to-green-50 p-8 rounded-lg border border-blue-200">
             <div className="space-y-6">
               <p className="text-lg text-gray-700 leading-relaxed">
                 MEDEGNAN offre la possibilité aux consultants qualifiés de rejoindre son réseau et d'obtenir une licence d'exploitation de sa méthodologie propriétaire.
@@ -443,8 +445,11 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Section : Cas d'Études */}
+      <CaseStudies />
+
       {/* Section : CTA Final */}
-      <section id="final-cta" className="py-20 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section id="final-cta" className="py-12 px-4 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Prêt à récupérer votre argent caché ?

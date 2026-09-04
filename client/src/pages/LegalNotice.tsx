@@ -31,7 +31,7 @@ export default function LegalNotice() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mb-4">4. Contact</h2>
             <p>
-              Pour toute question concernant ces mentions légales, veuillez nous contacter via WhatsApp : +229 64 28 08 65
+              Pour toute question concernant ces mentions légales, veuillez nous contacter via WhatsApp au +229 64 28 08 65 ou par email à contactmedegnan@gmail.com.
             </p>
           </section>
         </div>

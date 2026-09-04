@@ -17,7 +17,7 @@ function Router() {
       <Header />
       <div style={{ paddingTop: '80px' }}>
         <Switch>
-          <Route path={"\\"} component={Home} />
+          <Route path={"/"} component={Home} />
           <Route path={"/mentions-legales"} component={LegalNotice} />
           <Route path={"/404"} component={NotFound} />
           {/* Final fallback route */}
