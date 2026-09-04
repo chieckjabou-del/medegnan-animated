@@ -63,4 +63,11 @@
 - [x] Vérifier le build de production
 - [x] Vérifier le rendu desktop
 - [x] Vérifier le rendu mobile
-- [ ] Créer le checkpoint final de cette version
+- [x] Créer le checkpoint final de cette version
+
+## Export GitHub
+- [ ] Vérifier l'état Git et les fichiers sensibles avant export
+- [ ] Créer un dépôt GitHub privé dédié à MEDEGNAN
+- [ ] Pousser le code et l'historique utile vers GitHub
+- [ ] Vérifier l'accès et le contenu du dépôt distant
+- [ ] Transmettre le lien GitHub à l'utilisateur
